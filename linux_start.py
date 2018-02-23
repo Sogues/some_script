@@ -25,6 +25,7 @@ def main():
             virtualenv -p python3 env &&\
             . env/bin/activate &&\
             pip install jupyter &&\
+            pip install scipy matplotlib pillow &&\
             jupyter notebook --generate-config &&\
             echo "c.NotebookApp.ip = \'0.0.0.0\'" >> ~/.jupyter/jupyter_notebook_config.py && \
             echo "c.NotebookApp.open_browser = False" >> ~/.jupyter/jupyter_notebook_config.py'
