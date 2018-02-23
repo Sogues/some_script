@@ -3,6 +3,7 @@
 
 import os
 import sys
+import getpass
 
 def prepare():
     os.system('git clone https://github.com/haad/proxychains')
@@ -39,6 +40,10 @@ def main(args):
 
 
 if __name__ == '__main__':
+    user = getpass.getuser()
+    if user != 'root':
+        print('current user {}, please use root'.format(user))
+        sys.exit(-1)
     if len(sys.argv) > 2:
         print('args eror')
         sys.exit(-1)
