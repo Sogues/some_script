@@ -17,6 +17,8 @@ def main():
     state = 'echo "[global]" >> ~/.pip/pip.conf &&\
             echo "trusted-host=mirrors.aliyun.com" >> ~/.pip/pip.conf &&\
             echo "index-url=https://mirrors.aliyun.com/pypi/simple/" >> ~/.pip/pip.conf &&\
+            apt-get update &&\
+            apt-get install python3-pip &&\
             apt-get install zip tar &&\
 	        pip3 install --upgrade pip &&\
             pip3 install virtualenv &&\
