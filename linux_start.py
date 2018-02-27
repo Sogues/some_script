@@ -17,6 +17,8 @@ def main():
     state = 'echo "[global]" >> ~/.pip/pip.conf &&\
             echo "trusted-host=mirrors.aliyun.com" >> ~/.pip/pip.conf &&\
             echo "index-url=https://mirrors.aliyun.com/pypi/simple/" >> ~/.pip/pip.conf &&\
+            apt-get update &&\
+            apt-get install python3-pip &&\
             apt-get install zip tar &&\
 	        pip3 install --upgrade pip &&\
             pip3 install virtualenv &&\
@@ -24,6 +26,7 @@ def main():
             . env/bin/activate &&\
             pip install jupyter &&\
             pip install tensorflow-gpu==1.3.0 &&\
+            pip install scipy matplotlib pillow &&\
             jupyter notebook --generate-config &&\
             echo "c.NotebookApp.ip = \'0.0.0.0\'" >> ~/.jupyter/jupyter_notebook_config.py && \
             echo "c.NotebookApp.open_browser = False" >> ~/.jupyter/jupyter_notebook_config.py'
